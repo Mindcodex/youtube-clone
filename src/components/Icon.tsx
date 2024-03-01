@@ -3,10 +3,11 @@ import React, { ReactNode } from 'react'
 interface Props{
   children: ReactNode
   bgFill?: boolean 
+  size?: number
 }
-const Icon = ({ children, bgFill = false }: Props) => {
+const Icon = ({ children, bgFill = false, size = 40 }: Props) => {
   return (
-    <div className={`w-[40px] h-[40px] ${ bgFill ? 'bg-[#272727] hover:bg-[#3e3e3e]': 'hover:bg-[#272727]' } flex justify-center items-center rounded-full `}>
+    <div style={{width:size, height:size}} className={`${ bgFill ? 'bg-[#272727] hover:bg-[#3e3e3e]': 'hover:bg-[#272727]' } flex justify-center items-center rounded-full `}>
        { children }
     </div>
   )
